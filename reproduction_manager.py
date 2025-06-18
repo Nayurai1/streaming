@@ -2,12 +2,11 @@ from base_manager import BaseManager
 
 class ReproductionManager(BaseManager):
     """
-    Clase para gestionar la tabla 'reproduccion'.
-    Hereda la funcionalidad CRUD básica de BaseManager.
+    Gestiona las operaciones CRUD para la tabla 'reproduccion'.
     """
     def __init__(self, db_manager):
         columns = {
-            "id_reproduccion": "INT",
+            "id_reproduccion": "SERIAL",
             "id_usuario": "INT",
             "id_cancion": "INT",
             "fecha_reproduccion": "TIMESTAMP",
@@ -15,3 +14,4 @@ class ReproductionManager(BaseManager):
             "ubicacion": "TEXT"
         }
         super().__init__(db_manager, "reproduccion", columns, "id_reproduccion")
+

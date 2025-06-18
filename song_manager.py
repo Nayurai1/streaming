@@ -2,12 +2,11 @@ from base_manager import BaseManager
 
 class SongManager(BaseManager):
     """
-    Clase para gestionar la tabla 'cancion'.
-    Hereda la funcionalidad CRUD básica de BaseManager.
+    Gestiona las operaciones CRUD para la tabla 'cancion'.
     """
     def __init__(self, db_manager):
         columns = {
-            "id_cancion": "INT",
+            "id_cancion": "SERIAL",
             "titulo_cancion": "TEXT",
             "duracion": "TIME",
             "genero_cancion": "TEXT",
@@ -15,3 +14,4 @@ class SongManager(BaseManager):
             "id_album": "INT"
         }
         super().__init__(db_manager, "cancion", columns, "id_cancion")
+

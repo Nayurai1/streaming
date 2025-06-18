@@ -1,4 +1,3 @@
-# user_manager.py
 from base_manager import BaseManager
 
 class UserManager(BaseManager):
@@ -8,8 +7,8 @@ class UserManager(BaseManager):
     """
     def __init__(self, db_manager):
         columns = {
-            "id_usuario": "INT",
-            "nombre": "TEXT",   
+            "id_usuario": "SERIAL",
+            "nombre": "TEXT",
             "correo": "TEXT",
             "fecha_registro": "DATE",
             "pais": "TEXT",
@@ -17,3 +16,4 @@ class UserManager(BaseManager):
             "suscripcion_activa": "BOOLEAN"
         }
         super().__init__(db_manager, "usuario", columns, "id_usuario")
+
